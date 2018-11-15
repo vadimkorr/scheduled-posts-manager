@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def hello(request, id):
-    text = "<h1>Welcome to the app; id: %s</h1>" % id
-    return HttpResponse(text)
+def posts(request):
+    return render(request, 'main/posts.html')
 
-# Create your views here.
+
+def post(request, id):
+    return render(request, 'main/post.html')
+
+
+def schedule(request):
+    return render(request, 'main/schedule.html')
