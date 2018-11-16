@@ -1,4 +1,7 @@
 {
   "editor.formatOnSave": true,
-  "python.linting.lintOnSave": true
+  "python.linting.lintOnSave": true,
+  "[html]": {
+    "editor.formatOnSave": false
+  }
 }
