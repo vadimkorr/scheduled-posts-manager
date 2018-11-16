@@ -3,12 +3,14 @@ from django.http import HttpResponse
 
 
 def posts(request):
-    return render(request, 'main/posts.html')
+    return render(request, 'posts.html')
 
 
 def post(request, id):
-    return render(request, 'main/post.html')
+    post = {"id": id}
+    ctx = {"post": post}
+    return render(request, 'post.html', context=ctx)
 
 
 def schedule(request):
-    return render(request, 'main/schedule.html')
+    return render(request, 'schedule.html')
