@@ -30,15 +30,27 @@ Config files are here: `C:\\Users\\UserName\\.aws`
 
 `aws dynamodb list-tables --endpoint-url http://localhost:8000`
 
+`aws dynamodb scan --table-name posts --endpoint-url http://localhost:8000`
+
+`aws dynamodb describe-table --table-name posts --endpoint-url http://localhost:8000`
+
+`aws dynamodb delete-table --table-name posts --endpoint-url http://localhost:8000`
+
 ## Guide
 
 ### Working with virtualenv
 
 1. Install `pip install virtualenv`
+1. `virtualenv ENV`
+1. Enable scripts running (Windows) `Set-ExecutionPolicy RemoteSigned`
 1. Activate `./env/Scripts/activate`
-1. Deactivate `./env/Scripts/deactivate`
+1. Deactivate `deactivate`
 1. Freeze `pip freeze > requirements.txt`
 1. Install from virtualenv `pip install -r requirements.txt`
+
+### Launch
+
+1. `python manage.py runserver 8001`
 
 ### Resources:
 

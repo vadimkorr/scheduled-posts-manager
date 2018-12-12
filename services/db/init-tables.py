@@ -9,23 +9,23 @@ table = dynamodb.create_table(
     TableName='posts',
     KeySchema=[
         {
-            'AttributeName': 'user_id',
+            'AttributeName': 'id',
             'KeyType': 'HASH'  # Partition key
         },
-        {
-            'AttributeName': 'date_created',
-            'KeyType': 'RANGE'  # Sort key
-        },
+        # {
+        #     'AttributeName': 'date_created',
+        #     'KeyType': 'RANGE'  # Sort key
+        # },
     ],
     AttributeDefinitions=[
         {
-            'AttributeName': 'user_id',
+            'AttributeName': 'id',
             'AttributeType': 'S'
         },
-        {
-            'AttributeName': 'date_created',
-            'AttributeType': 'S'
-        },
+        # {
+        #     'AttributeName': 'date_created',
+        #     'AttributeType': 'S'
+        # },
     ],
     ProvisionedThroughput={
         'ReadCapacityUnits': 10,

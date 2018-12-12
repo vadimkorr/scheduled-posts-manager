@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from services.db.posts import getPost
 
 
 def posts(request):
@@ -7,7 +8,7 @@ def posts(request):
 
 
 def post(request, id):
-    post = {"id": id}
+    post = getPost(id)
     ctx = {"post": post}
     return render(request, 'post.html', context=ctx)
 
