@@ -2,7 +2,7 @@ import boto3
 import datetime
 
 dynamodb = boto3.resource(
-    'dynamodb', region_name="us-west-2", endpoint_url="http://localhost:8001")
+    'dynamodb')  # , region_name="us-west-2")  # , endpoint_url="http://localhost:8001")
 
 
 postsTable = dynamodb.Table('posts')
@@ -31,6 +31,20 @@ def removePost(id):
 # })
 
 # print('getting item', getPost('post2'))
+
+
+def getPosts():
+    response = postsTable.scan()
+    items = response['Items']
+
+    while True:
+        if response.get('LastEvaluatedKey'):
+            response = postsTable.scan(
+                ExclusiveStartKey=response['LastEvaluatedKey'])
+            items += response['Items']
+        else:
+            break
+    return items
 
 
 print(postsTable.creation_date_time)

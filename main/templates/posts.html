@@ -4,4 +4,16 @@
 
 {% block content %}
 <div><h1>Posts</h1></div>
+
+<table>
+    {% for p in posts %}
+    <tr>    
+        <td>
+            <a href="/post/{{p.id}}">{{ p.id }}</a>
+        </td>
+        <td>{{ p.message }}</td>
+        <td>{{ p.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock content %}
