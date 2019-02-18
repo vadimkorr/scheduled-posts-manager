@@ -1,10 +1,9 @@
-{% extends "base.html" %}
+{% extends "app.html" %}
+{% block base-title %}New Post{% endblock %}
 
-{% block toolbar_title %}Schedule{% endblock toolbar_title %}
-
-{% block content %}
+{% block app-content %}
 <form action="#" method="get">
   <input type="text" name="message" />
   <input type="submit" class="btn" value="Send post" name="sendPost">
 </form>
-{% endblock content %}
+{% endblock %}

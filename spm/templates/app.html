@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block base-content %}
+  <ul>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/posts/new">New post</a></li>
+  </ul>
+  <div>
+    {% block app-content %}{% endblock %}
+  </div>
+{% endblock %}

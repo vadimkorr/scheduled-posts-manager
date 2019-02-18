@@ -1,0 +1,17 @@
+{% extends "app.html" %}
+{% block base-title %}Posts{% endblock %}
+
+{% block app-content %}
+<div><h1>Post</h1></div>
+<table>
+  {% for p in posts %}
+  <tr>    
+    <td>
+      <a href="{{p.id}}">{{ p.id }}</a>
+    </td>
+    <td>{{ p.message }}</td>
+    <td>{{ p.status }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
