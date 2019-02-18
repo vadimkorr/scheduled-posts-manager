@@ -1,8 +1,9 @@
+from services.db.posts import putPost
 from django.shortcuts import render
-from django.http import HttpResponse
 from services.db.posts import getPost
 from services.db.posts import getPosts
-from services.db.posts import putPost
+
+# Create your views here.
 
 
 def posts(request):
@@ -17,7 +18,7 @@ def post(request, id):
     return render(request, 'post.html', context=ctx)
 
 
-def schedule(request):
+def newPost(request):
     if(request.GET.get('sendPost')):
         putPost({"id": "2", "message": request.GET.get('message')})
-    return render(request, 'schedule.html')
+    return render(request, 'new-post.html')
