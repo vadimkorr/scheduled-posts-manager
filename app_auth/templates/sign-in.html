@@ -1,0 +1,14 @@
+{% extends "auth.html" %}
+
+{% block base-title %}Sign in{% endblock %}
+
+{% block auth-content %}
+Sign in
+
+<form class="site-form" action="/sign-in/" method="post">{% csrf_token %}
+    <input name="username" type="text" />
+    <input name="password" type="password" />
+
+    <input type="submit" value="Sign in" />
+</form>
+{% endblock %}

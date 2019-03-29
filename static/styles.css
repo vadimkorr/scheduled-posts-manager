@@ -1,0 +1,7 @@
+.main-container {
+  padding: 20px;
+}
+
+tr > td {
+  padding: 5px;
+}

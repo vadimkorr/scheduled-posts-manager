@@ -2,6 +2,7 @@ from services.db.posts import putPost
 from django.shortcuts import render
 from services.db.posts import getPost
 from services.db.posts import getPosts
+import uuid
 
 # Create your views here.
 
@@ -20,5 +21,5 @@ def post(request, id):
 
 def newPost(request):
     if(request.GET.get('sendPost')):
-        putPost({"id": "2", "message": request.GET.get('message')})
+        putPost({"id": str(uuid.uuid4()), "message": request.GET.get('message')})
     return render(request, 'new-post.html')

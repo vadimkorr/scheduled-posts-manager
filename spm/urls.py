@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from appPosts import urls as posts_urls
-from appAuth import views as app_auth_views
+from app_posts import urls as posts_urls
+from app_auth import views as app_auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
