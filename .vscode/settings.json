@@ -3,5 +3,6 @@
   "python.linting.lintOnSave": true,
   "[html]": {
     "editor.formatOnSave": false
-  }
+  },
+  "python.pythonPath": "env\\Scripts\\python.exe"
 }
